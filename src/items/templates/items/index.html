@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <a href="{{ create_url }}"><button type="button">add new item</button></a>
     <ul style="list-style: none;">
         {% for e in object_list %}
             <li>
