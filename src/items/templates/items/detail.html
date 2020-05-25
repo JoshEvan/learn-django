@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p><a href=" {{ obj.get_index_url }} ">back to list</a></p>
+    <div>
+        <h1>{{obj.name}}</h1>
+        <p>{{obj.description}}</p>
+        <p>{{obj.price}}</p>
+    </div>
+
+{% endblock %}

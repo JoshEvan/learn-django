@@ -8,4 +8,7 @@ class Item(models.Model):
     price = models.DecimalField(decimal_places = 2, max_digits=100)
 
     def get_absolute_url(self):
-        return reverse('items:detail', kwargs={'id':self.id})
+        return reverse('items:detail', kwargs={'idItem':self.id})
+
+    def get_index_url(self):
+        return reverse("items:index")
