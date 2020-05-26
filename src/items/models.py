@@ -15,3 +15,6 @@ class Item(models.Model):
 
     def get_update_url(self):
         return reverse('items:update',kwargs={'idItem':self.id})
+
+    def get_delete_url(self):
+        return reverse('items:delete',kwargs={'idItem':self.id})

@@ -85,3 +85,23 @@ class UpdateView(ItemView,View):
             context['form'] = form
             context['object'] = obj
         return render(request,self.template_name,context)
+
+class DeleteView(ItemView,View):
+    template_name = "items/delete.html"
+
+    def get(self, request, *args, **kwargs):
+        obj = self.get_object()
+        context = {}
+        if obj is not None:
+            context['obj'] = obj
+        return render(request,self.template_name,context)
+
+    def post(self, request, *args, **kwargs):
+        obj = self.get_object()
+        context = {
+            'obj':obj
+        }
+        if obj is not None:
+            obj.delete()
+            return redirect(reverse_lazy('items:index'))
+        return render(request, self.template_name, context)

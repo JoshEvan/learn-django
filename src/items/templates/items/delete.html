@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} delete item {% endblock %}
+{% block content %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        <h2>sure to delete item {{obj.name}} ?</h2>
+        <input type="submit" value="yes">
+        <a href="../../"><button type="button">no</button></a>
+    </form>
+{% endblock %}

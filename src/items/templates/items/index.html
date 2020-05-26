@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %} list of items {% endblock %}
 {% block content %}
     <a href="{{ create_url }}"><button type="button">add new item</button></a>
     <ul style="list-style: none;">
@@ -9,6 +9,7 @@
                 {{e.name}}
                 <a href="{{ e.get_absolute_url }} ">see details</a>
                 <a href="{{ e.get_update_url }} ">update</a>
+                <a href="{{ e.get_delete_url }}">delete</a>
             </li>
         {% endfor %}
     </ul>
