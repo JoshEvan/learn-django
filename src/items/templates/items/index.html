@@ -8,6 +8,7 @@
                 {{forloop.counter}}. 
                 {{e.name}}
                 <a href="{{ e.get_absolute_url }} ">see details</a>
+                <a href="{{ e.get_update_url }} ">update</a>
             </li>
         {% endfor %}
     </ul>

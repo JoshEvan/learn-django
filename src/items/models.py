@@ -12,3 +12,6 @@ class Item(models.Model):
 
     def get_index_url(self):
         return reverse("items:index")
+
+    def get_update_url(self):
+        return reverse('items:update',kwargs={'idItem':self.id})
